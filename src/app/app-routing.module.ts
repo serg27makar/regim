@@ -1,10 +1,36 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {IncomeComponent} from './screens/income/income.component';
+import {ConsumptionComponent} from './screens/consumption/consumption.component';
+import {BalanceComponent} from './screens/balance/balance.component';
+import {PaymentsComponent} from './screens/payments/payments.component';
+import {ScheduledComponent} from './screens/scheduled/scheduled.component';
+import {IonicModule} from '@ionic/angular';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-const routes: Routes = [];
-
+const routes: Routes = [
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+    { path: 'income', component: IncomeComponent},
+    { path: 'consumption', component: ConsumptionComponent},
+    { path: 'balance', component: BalanceComponent},
+    { path: 'payments', component: PaymentsComponent},
+    { path: 'scheduled', component: ScheduledComponent},
+];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+      IonicModule,
+      CommonModule,
+      FormsModule,
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+    declarations: [
+        IncomeComponent,
+        ConsumptionComponent,
+        BalanceComponent,
+        PaymentsComponent,
+        ScheduledComponent
+    ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

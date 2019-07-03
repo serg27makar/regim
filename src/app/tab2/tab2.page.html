@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Бьюджет
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Welcome to Ionic</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>message</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Состояние</ion-label>
+    </ion-list-header>
+    <ion-item [routerLink]="['/income']">
+      <ion-icon slot="start" color="medium" name="cash" ></ion-icon>
+      <ion-label>Приход</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/consumption']">
+      <ion-icon slot="start" color="medium" name="cart"></ion-icon>
+      <ion-label>Расход</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/balance']">
+      <ion-icon slot="start" color="medium" name="analytics"></ion-icon>
+      <ion-label>остаток - дефицит</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/payments']">
+      <ion-icon slot="start" color="medium" name="warning"></ion-icon>
+      <ion-label>Объязательные платежи</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/scheduled']">
+      <ion-icon slot="start" color="medium" name="clipboard"></ion-icon>
+      <ion-label>Запланировано</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
