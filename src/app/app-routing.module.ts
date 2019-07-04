@@ -8,6 +8,7 @@ import {ScheduledComponent} from './screens/scheduled/scheduled.component';
 import {IonicModule} from '@ionic/angular';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {MyHeaderComponent} from './components/my-header/my-header.component';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
@@ -29,7 +30,8 @@ const routes: Routes = [
         ConsumptionComponent,
         BalanceComponent,
         PaymentsComponent,
-        ScheduledComponent
+        ScheduledComponent,
+        MyHeaderComponent,
     ],
   exports: [RouterModule]
 })
