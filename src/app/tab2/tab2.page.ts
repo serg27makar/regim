@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Tab2DataService} from './service/tab2-data.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(
+    private tab2DataService: Tab2DataService
+  ) {}
 
 
 
