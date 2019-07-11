@@ -1,5 +1,7 @@
 {
   "name": "regim",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

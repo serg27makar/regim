@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {IncomeComponent} from './screens/income/income.component';
-import {ConsumptionComponent} from './screens/consumption/consumption.component';
-import {BalanceComponent} from './screens/balance/balance.component';
-import {PaymentsComponent} from './screens/payments/payments.component';
-import {ScheduledComponent} from './screens/scheduled/scheduled.component';
+import {IncomeComponent} from './tab2/screens/income/income.component';
+import {ConsumptionComponent} from './tab2/screens/consumption/consumption.component';
+import {BalanceComponent} from './tab2/screens/balance/balance.component';
+import {PaymentsComponent} from './tab2/screens/payments/payments.component';
+import {ScheduledComponent} from './tab2/screens/scheduled/scheduled.component';
 import {IonicModule} from '@ionic/angular';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
