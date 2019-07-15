@@ -16,7 +16,9 @@ const routes: Routes = [
     { path: 'consumption', component: ConsumptionComponent},
     { path: 'balance', component: BalanceComponent},
     { path: 'payments', component: PaymentsComponent},
-    { path: 'scheduled', component: ScheduledComponent},
+    { path: 'scheduled', component: ScheduledComponent},  { path: 'developers', loadChildren: './pages/developers/developers.module#DevelopersPageModule' },
+  { path: 'developer', loadChildren: './pages/developer/developer.module#DeveloperPageModule' },
+
 ];
 @NgModule({
   imports: [
