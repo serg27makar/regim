@@ -1,0 +1,23 @@
+<app-my-header text="ПРИХОД"></app-my-header>
+<ion-content>
+  <ion-card class="welcome-card">
+
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Welcome to Ionic</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> Check out some of the resources below for next steps.</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Пополнения</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of state.income">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>

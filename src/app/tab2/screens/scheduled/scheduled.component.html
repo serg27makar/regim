@@ -1,0 +1,9 @@
+<app-my-header text="ЗАПЛАНИРОВАННО"></app-my-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let item of state.scheduled">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

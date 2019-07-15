@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Tab2DataService} from '../../service/tab2-data.service';
 
 @Component({
-  selector: 'app-income',
-  templateUrl: './income.component.html',
-  styleUrls: ['./income.component.scss']
+  selector: 'app-scheduled',
+  templateUrl: './scheduled.component.html',
+  styleUrls: ['./scheduled.component.scss']
 })
-export class IncomeComponent implements OnInit {
+export class ScheduledComponent implements OnInit {
 
   private state: any;
   constructor(
@@ -16,4 +16,5 @@ export class IncomeComponent implements OnInit {
   ngOnInit() {
     this.state = this.tab2DataService.getData();
   }
+
 }
