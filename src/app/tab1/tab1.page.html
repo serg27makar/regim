@@ -12,7 +12,7 @@
 
 <ion-content padding>
 
-  <ion-list>
+ <!-- <ion-list>
     <ion-item>
       <ion-label>Username</ion-label>
       <ion-input type="text" [value]="username" [(ngModel)]="username"></ion-input>
@@ -22,9 +22,15 @@
       <ion-label>Password</ion-label>
       <ion-input type="password" [value]="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-  </ion-list>
+  </ion-list>-->
 
   <div padding>
-    <button ion-button full (click)='login();'>Login</button>
+    <button ion-button full (click)='setData();'>Login</button>
   </div>
+  <div padding>
+    <button ion-button full (click)='socketUp();'>Login</button>
+  </div>
+ <!-- <div padding>
+  <button ion-button full (click)='login();'>Login</button>
+</div>-->
 </ion-content>

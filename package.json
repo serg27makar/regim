@@ -5,8 +5,8 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ionic serve",
+    "build": "ionic cordova build android",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -34,6 +34,8 @@
     "core-js": "^2.5.4",
     "ionic-angular": "^3.9.8",
     "rxjs": "~6.5.1",
+    "rxjs-compat": "^6.5.2",
+    "socket.io-client": "^2.2.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.29"
   },
