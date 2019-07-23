@@ -16,12 +16,9 @@ export class BalanceComponent implements OnInit {
   ngOnInit() {
     this.state = this.tab2DataService.getData();
   }
-  addItem(val) {
+/*  addItem(val) {
     this.tab2DataService.addData("income", val);
     console.log(this.state);
-  }
-  downloadFile() {
-    this.tab2DataService.dynamicDownloadJson();
-  }
+  }*/
 
 }
