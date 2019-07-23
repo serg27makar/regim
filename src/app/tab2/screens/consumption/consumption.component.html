@@ -1,12 +1,23 @@
 <app-my-header text="РАСХОД"></app-my-header>
 
 <ion-content>
-  <ion-list lines="none">
+  <ion-card class="welcome-card">
+
+    <ion-card-header>
+      <ion-card-subtitle>Добавить запись</ion-card-subtitle>
+      <ion-card-title> <input type="number" style="width: 100%;" [(ngModel)]="sum" placeholder = "0.00" /></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button (click)="addItem(sum)">Добавить</button>
+      <p> Check out some of the resources below for next steps.</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none" *ngIf="state.consumption">
     <ion-list-header>
       <ion-label>Потрачено</ion-label>
     </ion-list-header>
     <ion-item *ngFor="let item of state.consumption">
-      <ion-label>{{item}}</ion-label>
+      <ion-label class="my-label">{{item.sum}}<ion-icon class="my_icon" name="more" (click)="openModal({charNum: 10, codtype: 1 })"></ion-icon></ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
