@@ -1,20 +1,14 @@
 import {Injectable} from '@angular/core';
-import {JsonParseMode, JsonParserContext} from '@angular-devkit/core';
 
 @Injectable()
 export class Tab2DataService {
 
-  private income = ['400','7800','500','300'];
-  private consumption = [ "100", "100",  "250", "50"];
-  private balance = [ "8500"];
-  private payments = [ "3500", "500",  "240"];
-  private scheduled = [ "200" ];
+  private income = [];
+  private consumption = [];
+  private balance = [];
+  private payments = [];
+  private scheduled = [];
 
-  private setting = {
-    element: {
-      dynamicDownload: null as HTMLElement
-    }
-  }
   constructor() {}
 
   getData(): string[] {
@@ -25,15 +19,28 @@ export class Tab2DataService {
       payments: this.payments,
       scheduled: this.scheduled,
     };
-    console.log(data);
     return data;
   }
+
+  setData(newData) {
+    this.cleareData();
+    newData.map((item) => {
+      this.addData(item.name, item);
+    });
+  }
+
+  cleareData() {
+    this.income = [];
+    this.consumption = [];
+    this.balance = [];
+    this.payments = [];
+    this.scheduled = [];
+  }
+
   addData(name: string, val: any) {
     switch (name) {
       case 'income':
-        console.log(name, val);
         this.income.push(val);
-        console.log(this.income);
         break;
 
       case 'consumption':
@@ -56,49 +63,4 @@ export class Tab2DataService {
        console.log("defolt val",name, val);
     }
   }
-
-  fakeValidateUserData() {
-    return ({
-      userDate1: 1,
-      userData2: 2
-    });
-  }
-
-  //
-
-/*
-  dynamicDownloadTxt() {
-    this.fakeValidateUserData().subscribe((res) => {
-      this.dyanmicDownloadByHtmlTag({
-        fileName: 'My Report',
-        text: JSON.stringify(res)
-      });
-    });
-
-  }*/
-
-  dynamicDownloadJson() {
-      this.dyanmicDownloadByHtmlTag({
-        fileName: 'My Report.json',
-        text: JSON.stringify( this.fakeValidateUserData())
-      });
-  }
-
-  private dyanmicDownloadByHtmlTag(arg: {
-    fileName: string,
-    text: string
-  }) {
-    if (!this.setting.element.dynamicDownload) {
-      this.setting.element.dynamicDownload = document.createElement('a');
-    }
-    const element = this.setting.element.dynamicDownload;
-    const fileType = arg.fileName.indexOf('.json') > -1 ? 'text/json' : 'text/plain';
-    element.setAttribute('href', `data:${fileType};charset=utf-8,${encodeURIComponent(arg.text)}`);
-    element.setAttribute('download', arg.fileName);
-
-    var event = new MouseEvent("click");
-    element.dispatchEvent(event);
-  }
-
-
 }
