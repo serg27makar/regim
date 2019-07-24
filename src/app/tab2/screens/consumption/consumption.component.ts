@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Tab2DataService} from '../../service/tab2-data.service';
 import {DataService} from '../../../service/data.service';
-import {ModalController} from 'ionic-angular';
-import {Modal} from '../modal/modal';
 
 @Component({
   selector: 'app-consumption',
   templateUrl: './consumption.component.html',
   styleUrls: ['./consumption.component.scss'],
-  providers: [ModalController]
 })
 export class ConsumptionComponent implements OnInit {
 
@@ -23,7 +20,6 @@ export class ConsumptionComponent implements OnInit {
   constructor(
     private tab2DataService: Tab2DataService,
     private dataService: DataService,
-    public modalCtrl: ModalController,
   ) { }
 
   ngOnInit() {
@@ -50,8 +46,4 @@ export class ConsumptionComponent implements OnInit {
     this.sum = null;
   }
 
-  openModal(characterNum) {
-    let modal = this.modalCtrl.create(Modal, characterNum);
-    modal.present();
-  }
 }

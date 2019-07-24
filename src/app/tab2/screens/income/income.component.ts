@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Tab2DataService} from '../../service/tab2-data.service';
 import {DataService} from '../../../service/data.service';
+import { ModalController } from '@ionic/angular';
+import {NeedSignInModal} from './needSignInModal';
+
 
 @Component({
   selector: 'app-income',
@@ -19,11 +22,19 @@ export class IncomeComponent implements OnInit {
   };
   constructor(
     private tab2DataService: Tab2DataService,
-    private dataService: DataService
+    private dataService: DataService,
+    public modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
     this.updateState();
+  }
+
+  onModal() {
+    const modal = this.modalCtrl.create({
+      component: NeedSignInModal
+    });
+    modal.present();
   }
 
   updateState() {
