@@ -28,7 +28,9 @@
     <button ion-button full (click)='setData();'>Login</button>
   </div>
 
- <!-- <div padding>
-  <button ion-button full (click)='login();'>Login</button>
-</div>-->
+  <div class="countdowne">
+
+    <backtimer class="clock-t" [text]="textT" units=" Year | Month | Days | Hours | Minutes | Seconds"  [end]="endTime"></backtimer>
+
+  </div>
 </ion-content>

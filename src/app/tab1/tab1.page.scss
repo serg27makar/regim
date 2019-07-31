@@ -2,3 +2,38 @@
   max-height: 35vh;
   overflow: hidden;
 }
+.clock-t {
+  margin: 0;
+  position: relative;
+  //top: 0;
+  .measurements {
+    .uk-text-primary:after{
+      content: ':';
+    }
+  }
+  .measurements:last-child :after {
+    content: '';
+  }
+
+}
+.clock-d {
+  margin: 0;
+  position: relative;
+  //top: 0;
+  //left: 0;
+}
+.Дней {
+
+  .measurements-text{
+    margin-left: 10px;
+  }
+}
+.countdowne{
+  display: grid;
+  height: 78px;
+  color: #f47920;
+  font-size: 21px;
+  font-weight: 700;
+  position: relative;
+  top: 0;
+}
