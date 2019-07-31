@@ -40,23 +40,23 @@ export class Tab2DataService {
   addData(name: string, val: any) {
     switch (name) {
       case 'income':
-        this.income.push(val);
+        this.income.unshift(val);
         break;
 
       case 'consumption':
-        this.consumption.push(val);
+        this.consumption.unshift(val);
         break;
 
       case 'balance':
-        this.balance.push(val);
+        this.balance.unshift(val);
         break;
 
       case 'payments':
-        this.payments.push(val);
+        this.payments.unshift(val);
         break;
 
       case 'scheduled':
-        this.scheduled.push(val);
+        this.scheduled.unshift(val);
         break;
 
       default:
