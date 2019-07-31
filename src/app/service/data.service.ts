@@ -7,8 +7,8 @@ import {Tab2DataService} from '../tab2/service/tab2-data.service';
 
 export class DataService implements OnInit {
 
-  private url: string = 'http://localhost:3001';
-  private socket = io('http://localhost:3001');
+  private url: string = 'http://192.168.0.120:3001';
+  private socket = io('http://192.168.0.120:3001');
 
   constructor(
     private http: HttpClient,
@@ -17,13 +17,9 @@ export class DataService implements OnInit {
 
   ngOnInit() {}
 
-  /* ------------------ */
-
   setData(data: any) {
     return this.http.post(this.url + '/register' , data);
   }
-
-  /* ------------------ */
 
   itemIns(data) {
     let item: any = {
@@ -45,18 +41,27 @@ export class DataService implements OnInit {
     this.socket.emit('allItem');
   }
 
-  /* userUpdate(data) {
+  itemUpdate(data) {
      let item: any = {
+       id: data.id,
        name: data.name,
        sum: data.sum,
        state: data.state,
        details: data.details
      };
-     this.socket.on('userUpdateRes', (res, err) => {
+     this.socket.on('itemUpdateRes', (res, err) => {
        console.log(err);
      });
-       this.socket.emit('userUpdate', item);
-   }*/
+       this.socket.emit('itemUpdate', item);
+   }
+
+   itemDell(data) {
+    this.socket.on('itemDellAll', (res, err) => {
+     console.log(err);
+   });
+    this.socket.emit('itemDell', data);
+   }
+
 
  /* findUser(user, call) {
     this.socket.on('allFindUser', (res, err) => {
@@ -81,12 +86,4 @@ export class DataService implements OnInit {
   });
    this.socket.emit('findUserDep', user);
   }*/
-
- /* userDell(data) {
-   this.socket.on('allUserDell', (res, err) => {
-    console.log(err);
-  });
-   this.socket.emit('userDell', data);
-  }*/
-
 }
