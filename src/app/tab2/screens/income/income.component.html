@@ -1,17 +1,7 @@
 <app-my-header text="ПРИХОД"></app-my-header>
 <ion-content>
-  <ion-card class="welcome-card">
 
-    <ion-card-header>
-      <ion-card-subtitle>Добавить запись</ion-card-subtitle>
-      <ion-card-title> <input type="number" style="width: 100%;" [(ngModel)]="sum" placeholder="0.00"/></ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <button ion-button (click)="addItem(sum)">Добавить</button>
-      <p> Check out some of the resources below for next steps.</p>
-      <button ion-button (click)="onModal()">modal</button>
-    </ion-card-content>
-  </ion-card>
+  <div class="create-btn" (click)="onModal()" >+</div>
 
   <ion-list lines="none" *ngIf="state.income">
     <ion-list-header>
@@ -19,7 +9,24 @@
     </ion-list-header>
 
       <ion-item *ngFor="let item of state.income">
-        <ion-label class="my-label">{{item.sum}}<ion-icon class="my_icon" name="more"></ion-icon></ion-label>
+        <ion-label class="my-label">{{item.sum}}<ion-icon class="my_icon" name="more" (click)="onModalEdit(item)"></ion-icon></ion-label>
       </ion-item>
+
+<!--
+
+      <ion-item>
+        <ion-label>Gaming</ion-label>
+        <ion-select [(ngModel)]="gaming">
+          <ion-option value="nes">NES</ion-option>
+          <ion-option value="n64">Nintendo64</ion-option>
+          <ion-option value="ps">PlayStation</ion-option>
+          <ion-option value="genesis">Sega Genesis</ion-option>
+          <ion-option value="saturn">Sega Saturn</ion-option>
+          <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+      </ion-item>
+-->
+
+
   </ion-list>
 </ion-content>

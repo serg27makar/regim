@@ -12,15 +12,20 @@ import { Tab2DataService } from './tab2/service/tab2-data.service';
 import { DataService } from './service/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
-import {NeedSignInModal} from './tab2/screens/income/needSignInModal';
+import {TurnoverModal} from './modals/turnover/turnover.modal';
+import {FormsModule} from '@angular/forms';
+import {EditModal} from './modals/edit-modal/edit.modal';
+import {DeleteModal} from './modals/delete-modal/delete.modal';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NeedSignInModal
+    TurnoverModal,
+    EditModal,
+    DeleteModal
   ],
-  entryComponents: [NeedSignInModal],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  entryComponents: [TurnoverModal, EditModal, DeleteModal],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     StatusBar,
     SplashScreen,

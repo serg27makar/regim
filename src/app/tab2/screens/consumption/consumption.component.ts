@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Tab2DataService} from '../../service/tab2-data.service';
 import {DataService} from '../../../service/data.service';
+import {TurnoverModal} from '../../../modals/turnover/turnover.modal';
+import {ModalController} from '@ionic/angular';
+import { ModalOptions } from '@ionic/core';
 
 @Component({
   selector: 'app-consumption',
@@ -9,7 +12,6 @@ import {DataService} from '../../../service/data.service';
 })
 export class ConsumptionComponent implements OnInit {
 
-  private sum;
   private state: any = {
     income: [],
     consumption: [],
@@ -20,6 +22,7 @@ export class ConsumptionComponent implements OnInit {
   constructor(
     private tab2DataService: Tab2DataService,
     private dataService: DataService,
+    public modalCtrl: ModalController,
   ) { }
 
   ngOnInit() {
@@ -34,16 +37,22 @@ export class ConsumptionComponent implements OnInit {
     }, 500);
   }
 
-  addItem(sum) {
-    let item: any = {
-      name: 'consumption',
-      sum: sum,
-      state: this.state.balance,
-      details: 'this.details'
+  onModal() {
+    let sum = {
+      name: 'consumption'
     };
-    this.dataService.itemIns(item);
-    this.updateState();
-    this.sum = null;
+    const modalOptions: ModalOptions = {
+      component: TurnoverModal,
+      componentProps: sum
+    };
+
+    this.modalCtrl.create(modalOptions).then((modal) => {
+      modal.onDidDismiss()
+        .then(() => {
+          this.updateState();
+        });
+      if (modal) modal.present();
+    });
   }
 
 }

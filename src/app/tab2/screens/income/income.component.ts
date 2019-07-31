@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Tab2DataService} from '../../service/tab2-data.service';
 import {DataService} from '../../../service/data.service';
-import { ModalController } from '@ionic/angular';
-import {NeedSignInModal} from './needSignInModal';
+import {ModalController} from '@ionic/angular';
+import { TurnoverModal} from '../../../modals/turnover/turnover.modal';
+import { ModalOptions } from '@ionic/core';
+import {EditModal} from '../../../modals/edit-modal/edit.modal';
+import {DeleteModal} from '../../../modals/delete-modal/delete.modal';
+
 
 
 @Component({
@@ -12,7 +16,8 @@ import {NeedSignInModal} from './needSignInModal';
 })
 export class IncomeComponent implements OnInit {
 
-  private sum ;
+  gaming: string = "n64";
+  os: string;
   private state: any = {
     income: [],
     consumption: [],
@@ -23,19 +28,61 @@ export class IncomeComponent implements OnInit {
   constructor(
     private tab2DataService: Tab2DataService,
     private dataService: DataService,
-    public modalCtrl: ModalController
-  ) { }
+    public modalCtrl: ModalController,
+  ) {}
 
   ngOnInit() {
     this.updateState();
   }
 
   onModal() {
-    const modal = this.modalCtrl.create({
-      component: NeedSignInModal
+    let item = {
+      name: 'income'
+    };
+    const modalOptions: ModalOptions = {
+      component: TurnoverModal,
+      componentProps: item
+    };
+
+    this.modalCtrl.create(modalOptions).then((modal) => {
+      modal.onDidDismiss()
+        .then(() => {
+          this.updateState();
+        });
+      if (modal) modal.present();
     });
-    modal.present();
   }
+
+  onModalEdit(oneitem) {
+    const modalOptions: ModalOptions = {
+      component: EditModal,
+      componentProps: oneitem
+    };
+
+    this.modalCtrl.create(modalOptions).then((modal) => {
+      modal.onDidDismiss()
+        .then(() => {
+          this.updateState();
+        });
+      if (modal) modal.present();
+    });
+  }
+
+  onDeleteModal(oneitem) {
+    const modalOptions: ModalOptions = {
+      component: DeleteModal,
+      componentProps: oneitem
+    };
+
+    this.modalCtrl.create(modalOptions).then((modal) => {
+      modal.onDidDismiss()
+        .then(() => {
+          this.updateState();
+        });
+      if (modal) modal.present();
+    });
+  }
+
 
   updateState() {
     this.dataService.itemAll();
@@ -43,17 +90,5 @@ export class IncomeComponent implements OnInit {
       this.state = this.tab2DataService.getData();
       console.log(this.state);
     }, 500);
-  }
-
-  addItem(sum) {
-    let item: any = {
-      name: 'income',
-      sum: sum,
-      state: this.state.balance,
-      details: 'this.details'
-    };
-    this.dataService.itemIns(item);
-    this.updateState();
-    this.sum = null;
   }
 }

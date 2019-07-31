@@ -16,3 +16,45 @@
   width: 30px;
   height: 30px;
 }
+.br-code{
+  width: 100%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.qr-code{
+  width: 100%;
+  height: 100px;
+
+}
+.wrap{
+  display: contents;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.qr-code-rot{
+  .header-code{
+    .toolbar-title {
+      color: #222;
+    }
+  }
+}
+.create-btn{
+  height: 1.5em;
+  width: 1.5em;
+  background: #00ff97;
+  position: fixed;
+  top: 79%;
+  right: 1em;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 3.1em;
+  font-weight: 100;
+  padding: 0.12em;
+  box-shadow: 5px 9px 0.5em rgba(103, 57, 40, 0.5);
+  z-index: 1;
+}

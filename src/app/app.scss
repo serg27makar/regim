@@ -1,6 +1,74 @@
 // App Styles
 // ----------------------------------------------------------------------------
-// Put style rules here that you want to apply to the entire application. These 
-// styles are for the entire app and not just one component. Additionally, this 
-// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+div.modal-wrapper {
+  background: rgba(0, 0, 0, 0) !important;
+
+  turnoverModal {
+    width: 70%;
+    height: 12em;
+    left: 15%;
+    top: 45%;
+    margin-top: -75px;
+    overflow: hidden;
+    background: white;
+  }
+  deleteModal {
+    width: 80%;
+    height: 15em;
+    left: 10%;
+    top: 45%;
+    margin-top: -75px;
+    overflow: hidden;
+    background: white;
+  }
+  editModal {
+    width: 70%;
+    height: 12em;
+    left: 15%;
+    top: 45%;
+    margin-top: -75px;
+    overflow: hidden;
+    background: white;
+  }
+
+  .modal-tab {
+    padding: 10px;
+    z-index: 3;
+    position: absolute;
+  }
+
+  .needSignInModal-root {
+    height: 100%;
+  }
+
+  .button-modal {
+    width: 49%;
+    height: 3em;
+    border-radius: 5px;
+    color: #222;
+    font-weight: 700;
+    padding: 0;
+    margin: 1px;
+  }
+
+  .button-modal.button-sign-in {
+    background-color: #f47920;
+    color: #fff;
+  }
+
+  .btn-mod {
+    position: relative;
+    margin: inherit;
+    color: #000;
+
+    h4 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+}
