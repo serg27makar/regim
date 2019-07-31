@@ -1,0 +1,31 @@
+.backtimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .two-dots {
+    display: block;
+  }
+
+  .measurements {
+    flex: 0.1;
+    display: contents;
+    color: darkorange;
+    margin-right: 5px;
+    padding: 5px;
+  }
+
+  .divider {
+    float: right;
+    font-size: 30px;
+  }
+  .Дне {
+    display: none;
+  }
+  .uk-text-primary{
+    margin-right: 6px;
+  }
+
+}
