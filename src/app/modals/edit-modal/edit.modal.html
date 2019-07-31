@@ -1,0 +1,11 @@
+<div>
+  <ion-card-header>
+    <ion-card-subtitle>Изменить запись</ion-card-subtitle>
+    <ion-card-title> <input type="number" style="width: 100%;" [(ngModel)]="oneitem.sum" placeholder="0.00"/></ion-card-title>
+<!--    <ion-card-title> <input type="text" style="width: 100%;" [(ngModel)]="oneitem.name" placeholder="0"/></ion-card-title>-->
+  </ion-card-header>
+  <ion-card-content>
+    <button ion-button class="button-modal" (click)="chancelPress()">Отмена</button>
+    <button ion-button class="button-modal button-sign-in" (click)="upDateItem()">Добавить</button>
+  </ion-card-content>
+</div>
