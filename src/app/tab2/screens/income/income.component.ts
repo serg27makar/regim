@@ -16,8 +16,6 @@ import {DeleteModal} from '../../../modals/delete-modal/delete.modal';
 })
 export class IncomeComponent implements OnInit {
 
-  gaming: string = "n64";
-  os: string;
   private state: any = {
     income: [],
     consumption: [],
@@ -82,7 +80,6 @@ export class IncomeComponent implements OnInit {
       if (modal) modal.present();
     });
   }
-
 
   updateState() {
     this.dataService.itemAll();

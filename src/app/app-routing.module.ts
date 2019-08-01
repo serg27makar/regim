@@ -20,10 +20,10 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-      IonicModule,
-      CommonModule,
-      FormsModule,
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
   ],
     declarations: [
         IncomeComponent,
